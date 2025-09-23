@@ -1,0 +1,36 @@
+1. What is Linux Operating System (OS)? Also, list three pros and cons of it. 
+Linux is an open-source operating system based on the UNIX style model. Linux works for the management of hardware resources and security; it also offers the user interface for the running of applications.It acts as a bridge between computer hardware and software. 
+Pros: 
+1. Free and open-source; hence, no license cost. 
+2. Highly secure when compared to multiple other OS. 
+3. Very stable and crashes almost never. 
+
+Cons: 
+1. It is not beginner-friendly
+2. Does not support some commercial software, like MS Office. 
+3. Driver support is sometimes tricky in hardware.       
+ 
+2. Differentiate between Linux, Mac, Android, and Windows OS with at least six features each. 
+-Linux:It is a Open-source, customizable, secure, widely used in servers supporting multiple distributions (Ubuntu, Fedora), strong community support. 
+-Mac: It is exclusively available on Apple devices, elegant GUI, strong integration of iPhone/iPad, paid license, very strong multimedia support, closed-source. 
+-Android: Based on Linux kernel for mobile platform, open source with Google services, millions of apps supported, touch-optimized, most used mobile OS. 
+-Windows: Paid OS, user-friendly GUI, widest software compatibility, dominant PC market share, closed source, and it has good gaming support.
+
+3. Why is Linux preferred for Mainframe Servers for legacy application? 
+1. It is extremely stable and reliable (servers run for months/years without reboot). 2. Offers strong security features. 3. Cost-effective because it is open-source and doesn’t require expensive licenses.
+4. Explain the structure of the Linux File System with proper diagram.
+Linux follows a hierarchical file system starting with the root directory '/'. Everything (files, devices, programs) exists under this root.  Example using the tree command: / ├── bin    (essential commands) ├── etc    (configuration files) ├── home   (user files) ├── lib    (libraries) ├── root   (root user home) ├── var    (logs, variable data) └── usr    (user applications)
+5. If Linux OS is open-source, how do companies like Red Hat still making money from it? 
+Companies like Red Hat don’t sell Linux itself (since it’s free). They make money by: - Providing enterprise-level support and maintenance services. - Offering training and certification programs. - Selling customized solutions with guaranteed stability and updates. - Partnering with corporations and governments that need reliable server solutions.
+6. Write the command to display today’s date and time (i.e., current System time). 
+date
+7. Which command is used to check how long the system has been running? 
+uptime
+8. What is the difference between shutdown -h now and halt?
+- shutdown -h now → It safely shuts down the system,it will close all process before power off. - halt → Immediately stops the CPU butit will  not safely close all processes.
+9. Compare init 0 and shutdown -h. Which is safer? Why?
+- init 0 → Puts the system in runlevel 0 (halts the system). - shutdown -h → Gracefully shuts down, notifying users and stopping services safely.  Shutdown -h is safer because it ensures processes are closed properly before shutdown.
+10. A system administrator accidentally powers off a Server machine without shutting it down properly. What problems can occur to the said Server? 
+- Data loss or corruption (unsaved work or database issues). - File system damage leading to boot problems. - Services may not restart properly on reboot. - Hardware stress due to sudden power cut.
+Brainstorming
+a) As Linux Kernel is open-source, can we build our own operating system? Yes, since Linux Kernel is open-source, anyone can modify and build a custom OS. Examples include Android, Ubuntu, and Kali Linux.  b) In order to do that, what are the stoppers, hurdles, and challenges? - Requires deep technical knowledge. - Time-consuming and resource-heavy. - Compatibility issues with hardware and drivers. - Need for long-term support and updates.  c) Is anyone in India working on this field? Find at least three to four engineers. Yes, India has engineers working on open-source and Linux-based projects. Examples include: 1. Kris Gopalakrishnan 2. Nandan Nilekani 3. Developers at C-DAC (Centre for Development of Advanced Computing) building Bharat Operating System Solutions – BOSS Linux. 4. Open-source communities in India (FOSS.IN, ICFOSS Kerala).
