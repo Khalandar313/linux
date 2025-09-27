@@ -1,0 +1,46 @@
+1. What does the command pwd, whoami, and hostname display?
+• pwd → It prints the working directory   Eg: /home/student/project.
+• whoami → It shows the username of the person    Eg: student.
+• hostname →It  displays the system’s name on the network   Eg:kali
+
+
+ 2. Write the command to create a directory named “project” inside /home/student and keep three .txt files in it.
+mkdir /home/student/project cd /home/student/project touch file1.txt file2.txt file3.txt 
+
+
+3. Difference between absolute path and relative path with examples.
+• Absolute Path →It  always starts from the root `/`
+Eg:/home/student/project/file1.txt 
+• Relative Path → It is based on current working directory.
+ Example: if you are in /home/student/project, just typing file1.txt refers to the same file. 
+
+
+4. What command will give you already executed command traces in the terminal?
+history 
+
+
+5. Compare find and locate. Which one is faster and why?
+• find → Searches directly on the filesystem.              It is accurate but slower.
+• locate → Uses a prebuilt database of files Much faster but may miss very recent changes unless updated Locate is faster because it checks 
+a database instead of scanning the disk every time.
+
+
+
+ 6. Which command is used to modify file permissions in Linux? Example.
+chmod Eg: chmod 755 file1.txt  
+
+
+7. A file has permissions -rw-r--r--. What does this mean?
+• - → Regular file • rw- → Owner can read and write • r-- → Group can only read • r-- → Others can only read  
+
+
+8. Difference between chown and chgrp with example.
+The chown command changes the ownership of a file to a different user. Example: chown alice report.txt gives ownership of report.txt to Alice.
+The chgrp command changes the group ownership. Example:chgrp project report.txt puts report.txt in the "project" group.
+
+9. A file needs to be accessible by multiple users but only writable by the owner. How will you set permissions?
+chmod 644 filename  
+
+
+10. How do you check the manual page for any Linux command?
+ man <command_name> Example: man ls  
