@@ -1,0 +1,59 @@
+1. Distinguish between man and whatis commands. Justify with an example.
+
+The man command will show you the entire manual page of a command. The man command lists the full explanation of usage, descriptions, options, and examples for the command.
+Example:man ls
+→ This will show the full manual page of ls with all details.
+
+The whatis command shows you a one-line summary of the command.
+Example: whatis ls
+→ It will show something similar to: ls (1) – list directory contents.
+
+2. Use the tee command to save the output of ls -l into a file while also displaying it.
+Command: ls -l | tee output.txt
+
+3. Explain with an example how the tee command can be used in logging.
+The tee command is useful  when we want to view the output in real-time, while also saving it for later.
+Example: ping -c 4 google.com | tee ping_log.txt
+It shows the ping results on the screen instantly. At the same time, those same results go into the ping_log.txt file. Then we have a log to check back on.
+
+4. List the steps involved in installing Ubuntu 25.04 LTS on Oracle VirtualBox.
+Steps:
+Download the Ubuntu 25.04 ISO image file from the Ubuntu website.
+Open VirtualBox, click on New VM, and add your name and OS type.
+Allocate RAM (at least 2GB).
+Create a virtual hard disk ( 20GB or more)
+Mount the downloaded ISO image file under the Storage option.
+Start the VM and it will boot into the Ubuntu installer.
+Follow the onscreen installer prompts such as language choice, timezone, username, and password choice.
+Finish installing and restart the VM; you should be able to start Ubuntu.
+
+5. During Ubuntu OS installation, you face a Kernel Panic Error. How would you troubleshoot it?
+Verify the ISO file isn't corrupted (use checksum).
+Increase memory or processor allocation in the VM setting.
+Make sure you've enabled VT-x or AMD-V in the BIOS and VirtualBox settings.
+Boot with safe graphics mode, or try booting Ubuntu in Recovery mode.
+If it is still unable to fix the issue, we could try re-downloading the ISO file, or boot with an older kernel.
+
+6. Write the command to display the system’s hostname. How to change hostname using sysctl command?
+Display hostname: 
+           hostname
+Change hostname temporarily with sysctl:  
+            sudo sysctl kernel.hostname=newname
+
+7. Which command is used to show the calendar of the year 1984 with August month?
+Command:  cal 8 1984
+
+8. Write a command to display system uptime and logged-in users together.
+Command:   uptime && who
+uptime → shows system running time. who → lists logged-in users. 
+
+9. Use the find command to list all “.c” files in /home/user.
+Command:    find /home/user -name "*.c"
+
+10. How do you change file permissions to allow only the owner to read and write?
+Command:  chmod 600 filename
+
+     
+
+
+
