@@ -1,0 +1,35 @@
+Name: Mohammed Khalandar 
+USN: ENG24CY0034
+Section: Cyber-A
+
+1. What is a shell in Linux OS? How many categories of shell exist? Why is bash so popular?
+ A shell in Linux acts like this bridge between user and the operating system. It grabs the commands and turns them into something the computer gets. Then it makes things happen. We will get mainly two families of shells out there. One is the Bourne type, stuff like sh, bash, and ksh. The other is the C shell family, like csh and tcsh. Bash is loved much because its powerful and not too hard to pick up. Plus its the default on most Linux setups. That makes daily tasks way easier for everyone.
+
+2. What does ls -Z display?
+The ls -Z command pulls up those SELinux security context labels on files. This only really works when SELinux is enabled. That added column there, it has details like user:role:type:level Basically the security attributes. If SELinux isn't active at all, though, the output just doesn't show anything useful in those labels.
+
+3. Command to list all hidden files in the current directory.
+ 
+ ls -a
+ Hidden files in Linux simply start with a dot (.), and this command makes them      visible without disturbing anything else.
+
+4. Difference between hard links and soft (symbolic) links.
+Hard links work like photocopying a files pointer. If we end up with the original and the link both pointing right to that same data. Even if we delete the original, the data stays safe. Soft links feel more like those signposts that just point to the files name. The real file moves or gets deleted, and then shortcut doesnt work anymore.
+
+5. A file has permissions -rwxr-x--x. Who can read, write, and execute?    The owner can read, write, and execute (rwx).    The group can only read and execute (r-x).    Others can only execute (--x).    It’s as if the owner has full power, the group can view and run, but outsiders can only use, not see or change it.
+
+6. Command to change group ownership of data.txt to group staff.
+chgrp staff data.txt
+
+7. Why is it dangerous to give 777 permissions to a file? Explain with an example
+777 means anyone can read, write, and execute. If it’s applied to a sensitive file, absolutely anyone—even malicious users—can alter, delete, or run it, posing real security risks.
+
+8. Difference between apropos (man -k) and whatis (man -f):
+Apropos or man -k looks through the short descriptions database. It finds lines with the keyword in them. It is a good way to discover commands by topic.
+Whatis or man -f gives the one-line description for a specific command name. Whatis handles exact matches. Apropos is broader.
+
+9. Command to redirect error output of a command to error.log.
+some_command 2> error.log
+
+10. How to use tee to append output to a file instead of overwriting it?
+some_command | tee -a output.txt
