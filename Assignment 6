@@ -1,0 +1,42 @@
+Name: Mohammed Khalandar 
+USN: ENG24CY0034
+Section: Cyber-A
+
+1. Which command lists the contents of a directory? Justify with example.
+The ls command does that. For example, ls /home/user will show everything inside the specified directory.
+ls -l to lists files with details 
+ls -a use to include hidden files
+
+2. Command to create a new directory named 123test_dir.
+mkdir 123test_dir
+
+3. Purpose of sed and an example.
+Sed works as a stream editor. We can quickly make changes to text . For example. Sed 's/apple/orange/g' fruits.txt. That swaps out every apple for orange in the fruits file.
+
+4. Which distinct command displays one-line descriptions of commands?
+Whatis command shows the one line description.
+
+5. Command to create an empty file named notes.txt.
+touch notes.txt is the command used to create an empty file named notes.txt
+
+6. Differentiate grep and awk with an example.
+Grep looks for lines that match some pattern we give it. It prints out those matching lines. Works fine for basic matching jobs.
+Awk turns into a whole language for handling text. We can filter stuff through it. Pull out fields. Do some computing on the data. Even format the output nice.
+Take an example. Say you want lines with ERROR from a file called log.txt.
+grep 'ERROR' log.txt
+Now with awk. We could print just the fifth column from lines that have ERROR. That is if columns split by whitespace.
+awk '/ERROR/ {print $5}' log.txt
+
+7. Command to give read, write, and execute permission to the owner of script.sh.
+Use the command chmod u+rwx script.sh
+
+8. How is chown different from chgrp? Examples.
+chown changes file owner Example: If I want to change owner to alice:                 sudo chown alice file.txt
+chgrp changes only group ownership. Example:If I want to change group to staff:chgrp staff file.txt
+
+9. A user cannot execute a file even though it exists in their directory. How to troubleshoot using ls-l, chmod, and whoami?
+So, first off, check those permissions. Run ls -l filename. Look for the x in the user's section. That means execute. Then use whoami. It shows which user is logged in right now. If the execute bit is missing there, just chmod +x filename. That fixes it up quick.
+
+10. Command pipeline: find .log files modified in last 2 days in /var/log, display them, and save results into recent_logs.txt using tee.
+find /var/log -name "*.log" -mtime -2 -print | tee recent_logs.txt
+This finds all the matching log files, shows them right away, and saves the list for later
