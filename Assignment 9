@@ -1,0 +1,96 @@
+Name: Mohammed Khalandar NA
+USN: ENG24CY0034
+Section: Cyber-A
+
+1. Write a shell script using ifelse to check if a number is even or odd.
+#!/bin/bash
+read -p "Enter number: " num
+if (( num % 2 == 0 )); then
+  echo "$num is even"
+else
+  echo "$num is odd"
+fi
+
+2. Explain the difference between if and case statements in bash.
+If statements check conditions. They run code based on whether something is true or false. That works great for logical branching.
+Case statements pick from multiple fixed options. They are a smart choice for menu-like setups.
+Example: case $fruit in
+  apple) echo "Red fruit";;
+  banana) echo "Yellow fruit";;
+  *) echo "Unknown";;
+esac
+
+3. Write a script to find the largest of three numbers entered by the user.
+#!/bin/bash
+read a; read b; read c
+if ((a > b && a > c)); then
+  echo "Largest: $a"
+elif ((b > c)); then
+  echo "Largest: $b"
+else
+  echo "Largest: $c"
+fi
+
+4. How do you use a for loop to traverse an array in bash? Give an example. The
+array is defined as arr=(123, “Abs”,-2.3, ‘A’, 23.56, 0).
+arr=(arr123 Abs -2.3 A 23.56 0)
+for i in "${arr[@]}"; do
+  echo $i
+Done
+ From the above every array element gets displayed in order and no one is skipped from that
+
+5. Write a shell script to loop through all files in the current directory and display
+their names
+
+for file in *; do
+  echo $file
+done
+
+6. What is the difference between while and until loops in bash?
+
+while  loop continues as long as its condition is true.
+Example:  while [ $x -lt 5 ]; do ((x++)); done
+
+The until loop just keeps on running. It stops only when its condition hits true. That means it goes while the thing is still false. Each loop works best in its own kind of scripting spot.
+Example: until [ $x -ge 5 ]; do ((x++)); done
+
+7. Write a countdown timer script using a while loop.
+
+count=10
+while (( count > 0 )); do
+  echo $count
+  sleep 1
+  ((count--))
+done
+echo "Time's up!"
+
+8. How do you use break and continue statements in loops? Give examples.
+
+Break gets out of the loop way before it finishes up.
+
+Continue just skips the rest of the current cycle and heads to the next one right away.
+Here is an example.
+
+bash
+for i in {1..5}; do
+  [ $i -eq 3 ] && continue
+  [ $i -eq 5 ] && break
+  echo $i
+Done.
+
+9. Write a script to check if a file exists or not using the if and else loop
+
+if [ -e filename.txt ]; then
+  echo "File exists"
+else
+  echo "File not found"
+fi
+
+10. Write a script to calculate factorial of a number using for loop
+
+read -p "Enter number: " n
+fact=1
+for (( i=1; i<=n; i++ )); do
+  fact=$((fact * i))
+done
+echo "Factorial: $fact"
