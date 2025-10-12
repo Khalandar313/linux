@@ -1,0 +1,73 @@
+Name: Mohammed Khalandar NA
+USN: ENG24CY0034
+Section: Cyber-A
+
+1. What is user-defined function in shell scripting? Explain with example.
+A function basically pulls together some commands so we can reuse them over again. Like this example in bash.
+greet() {
+  echo "Hello!"
+}
+greet
+So here the greet thing just does that one job. we can that we we want.
+
+2. Write a bash script with a function that multiplies two integer numbers.
+multiply() {
+  result=$(( $1 * $2 ))
+  echo "Product: $result"
+}
+multiply 4 7
+We can call multiply with any two numbers, and it prints the result.
+
+3.Explain how arrays (1D, 2D, and 3D) are declared in bash scripting.
+ Bash handles 1D arrays straightforward. We just do something like arr=(1 2 3).
+Bash only has real 1D arrays built in. But it can pull off higher dimensions using clever indexing. Kind of hacks it together.
+For 2D stuff, people simulate it using indexed arrays. Like arr[1] or whatever.
+3D gets trickier. It can simulate that with extra indices. Or maybe associative arrays
+So like this for a matrix.
+
+matrix[0,0]=1
+matrix[0,1]=2
+matrix[1,0]=3
+matrix[1,1]=4
+
+It is not ideal. But it gets the job done most times.
+
+4. Write a shell script to display elements of an array.
+arr=(apple banana cherry)
+for i in "${arr[@]}"; do
+  echo $i
+Done
+
+5. What is the purpose of cron in Linux?
+The purpose of cron in Linux. It handles scheduling tasks automatically,, at specific times or intervals.Essentially, this means that these tasks are compulsory for actions like system maintenance, backups, and all the other tasks that truly must be performed once without user intervention.
+
+6. Write a cron job to run a backup script every day at midnight.
+0 0 * * * /path/to/backup.sh
+.
+The cron tab runs the backup at 12am every day.
+
+7. How do you schedule a one-time job using at command?
+echo "/path/to/script.sh" | at 19:00
+This will run the script once at 7:00pm
+
+8. Write a script to display disk usage using df and du.
+#!/bin/bash
+echo "Disk Free Space:"
+df -h
+echo "Directory Usage:"
+du -sh *
+
+9. How can you log the output of a script using the tee command?
+#!/bin/bash
+echo "Logging system info..." | tee -a logfile.txt
+df -h | tee -a logfile.txt
+
+here the output can be viewd in both the terminals
+
+10. Explain with an example how shell scripting can automate system administration tasks.
+For example: Monitor disk usage, where if it is almost full, then send a warning email. .
+#!/bin/bash
+if [ $(df / | awk 'NR==2{print $5}' | tr -d '%') -gt 90 ]; then
+  echo "Disk almost full!" | mail -s "Warning" admin@example.com
+fi
+Automates important checks,keeping systems safe without manual effort.
