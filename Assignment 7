@@ -1,0 +1,66 @@
+Name: Mohammed Khalandar NA
+USN: ENG24CY0034
+Section: Cyber-A
+
+1. What is a bash shell script? Give one example
+A Bash shell script, its basically a plain text file. We stick a bunch of Linux commands inside it. The Bash shell goes through them one by one, executes everything in order. Thing is, it makes automating those repetitive tasks a lot easier.
+Example.
+#!/bin/bash
+echo "Welcome to Bash Scripting!"
+Save that as welcome.sh. Make it executable with chmod +x welcome.sh. Then run it by typing ./welcome.sh.
+
+2. Write a simple shell script to print “Hello World”.
+
+#!/bin/bash
+echo "Hello World"
+
+If we save and run this we can see our  first message from the script
+
+3. What is the purpose of comments (#) in a shell script?
+Comments start with a # sign. They help explain what the script does. That makes it easier for others to get the logic. Or even for ourself later on.Comments are ignored by the shell.
+
+4. How do you declare variables (int, float, double, string, Boolean, char) in a shell script?
+In bash, all variables are strings.
+ Example:
+Bash
+int_var=10
+float_var=5.6
+string_var="hello"
+bool_var=true
+char_var='A'
+Bash is flexible, but everything behaves like a string by default.​
+
+5. Write a shell script to display the current date and time.
+#!/bin/bash
+echo "Current Date and Time: $(date)"
+
+By running this will show the system’s current date and time
+
+6.Difference between a constant and a variable in bash.
+A variable holds a value that might shift around whenever during the script run.
+Then for a variable, name="Linux" works fine, since it can change later if needed.  
+Constants get set once, and then they just stick with that value no matter what.  
+Like,we can write something like readonly PI=3.14, and that's basically the constant right there.
+
+7. Script to read two integers and compute their sum.
+#!/bin/bash
+read -p "Enter first number: " a
+read -p "Enter second number: " b
+sum=$((a + b))
+echo "Sum = $sum"
+
+8.What is the use of source command?
+source file.sh basically runs that script straight in the current shell. It does not spawn some new one.We know, that keeps any variables or environment tweaks active even after it all wraps up.
+
+9.How can you debug a shell script? Give two methods.
+Insert set -x to make it print the commands right as they run.  
+Echo statements work good too for showing off variable values and the steps along the way.  
+Both of those things help us track how the script behaves and grab any issues that pop up.
+
+
+10. Write a bash script to create and delete a file.
+#!/bin/bash
+touch test.txt
+echo "File created."
+rm test.txt
+echo "File deleted.
